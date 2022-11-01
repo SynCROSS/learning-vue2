@@ -7,8 +7,7 @@
     <title>Vue Sample</title>
   </head>
   <body>
-    <div id="app"></div>
-    {{message}}
+    <div id="app">{{message}}</div>
     <script async src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
     <script async>
       window.onload = function () {
@@ -16,6 +15,19 @@
           el: "#app",
           data: {
             message: "Hello Vue.js!",
+          },
+          beforeCreate: function () {
+            console.log("file: index.html ~ line 20 ~ beforeCreate");
+          },
+          created: function () {
+            console.log("file: index.html ~ line 23 ~ created");
+          },
+          mounted: function () {
+            console.log("file: index.html ~ line 26 ~ mounted");
+            this.message = "Mounted!";
+          },
+          updated: function () {
+            console.log("file: index.html ~ line 30 ~ updated");
           },
         });
       };
