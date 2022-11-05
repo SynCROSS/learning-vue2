@@ -7,28 +7,19 @@
     <title>Vue Sample</title>
   </head>
   <body>
-    <div id="app">{{message}}</div>
+    <div id="app">
+      <h1>Add Global Component</h1>
+      <my-component></my-component>
+    </div>
     <script async src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
     <script async>
       window.onload = function () {
+        Vue.component('my-component', {
+          template: '<p>Added Global Component</p>',
+        });
+
         new Vue({
-          el: "#app",
-          data: {
-            message: "Hello Vue.js!",
-          },
-          beforeCreate: function () {
-            console.log("file: index.html ~ line 20 ~ beforeCreate");
-          },
-          created: function () {
-            console.log("file: index.html ~ line 23 ~ created");
-          },
-          mounted: function () {
-            console.log("file: index.html ~ line 26 ~ mounted");
-            this.message = "Mounted!";
-          },
-          updated: function () {
-            console.log("file: index.html ~ line 30 ~ updated");
-          },
+          el: '#app',
         });
       };
     </script>
