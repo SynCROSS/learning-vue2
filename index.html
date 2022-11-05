@@ -7,33 +7,7 @@
     <title>Vue Sample</title>
   </head>
   <body>
-    <div id="app1">
-      <my-global-component></my-global-component>
-      <my-local-component></my-local-component>
-    </div>
-    <div id="app2">
-      <my-global-component></my-global-component>
-      <my-local-component></my-local-component>
-    </div>
-    <script async src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
-    <script async>
-      window.onload = function () {
-        Vue.component('my-global-component', {
-          template: '<p>I am Global Component</p>',
-        });
-
-        new Vue({
-          el: '#app1',
-          components: {
-            'my-local-component': {
-              template: '<p>I am Local Component</p>',
-            },
-          },
-        });
-        new Vue({
-          el: '#app2',
-        });
-      };
-    </script>
+    <div id="app"></div>
+    <script async src="src/app.js"></script>
   </body>
 </html>
