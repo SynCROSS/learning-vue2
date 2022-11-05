@@ -17,8 +17,5 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-vue": "^9.7.0",
     "prettier": "^2.7.1"
-  },
-  "dependencies": {
-    "vue": "2.5.2"
   }
 }

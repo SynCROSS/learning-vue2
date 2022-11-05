@@ -8,10 +8,6 @@ specifiers:
   eslint-plugin-import: ^2.25.2
   eslint-plugin-vue: ^9.7.0
   prettier: ^2.7.1
-  vue: 2.5.2
-
-dependencies:
-  vue: 2.5.2
 
 devDependencies:
   '@vue/runtime-dom': 3.2.41
@@ -1259,10 +1255,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /vue/2.5.2:
-    resolution: {integrity: sha512-Au9rf8fPkBulFHfZ406UaQDd1jH9fqGRIM+0IHilrXnJ/0TeeMH4SBkNxWf2dGevl2S3aVeu0E/WklEv0/msag==}
-    dev: false
 
   /which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}
