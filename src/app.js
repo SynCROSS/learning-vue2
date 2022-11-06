@@ -3,20 +3,14 @@ window.onload = function onload() {
     return;
   }
   Vue.component('child-component', {
-    props: {
-      message: {
-        type: [String, Number],
-        required: true,
-      }
-    },
-    template: '<p>{{message}}</p>',
+    template: '<button v-on:click="$emit(\'log-text\')">Log Text</button>',
   });
   // eslint-disable-next-line no-new
   new Vue({
     el: '#app',
-    data: function data() {
-      return {
-        message: '"Hello Vue!" From Parent component'
+    methods: {
+      logText: function logText() {
+        console.log('Received An Event');
       }
     }
   });
