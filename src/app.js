@@ -1,17 +1,22 @@
 window.onload = function onload() {
-  if (typeof Vue === 'undefined') {
+  if (typeof Vue === "undefined") {
     return;
   }
-  Vue.component('child-component', {
-    template: '<button v-on:click="$emit(\'log-text\')">Log Text</button>',
-  });
-  // eslint-disable-next-line no-new
-  new Vue({
-    el: '#app',
+  var eventBus = new Vue;
+  Vue.component("child-component", {
+    template: '<button v-on:click="logText">Log Text</button>',
     methods: {
       logText: function logText() {
-        console.log('Received An Event');
+        eventBus.$emit("log-by-event-bus", 100);
       }
+    }
+  });
+  new Vue({
+    el: "#app",
+    created: function created() {
+      eventBus.$on("log-by-event-bus", function (value) {
+        console.log("received an event by event bus.\nReceived Value:", value);
+      });
     }
   });
 };
