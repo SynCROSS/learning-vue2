@@ -2,21 +2,33 @@ window.onload = function onload() {
   if (typeof Vue === "undefined") {
     return;
   }
-  var eventBus = new Vue;
+  // TODO Practice #1 Add sibling-component with template and options
+  Vue.component('sibling-component', {
+    template: '<p>anotherMessage: {{anotherMessage}}</p>',
+    props: {
+      anotherMessage: {
+        type: String,
+        required: true,
+      }
+    }
+  })
   Vue.component("child-component", {
-    template: '<button v-on:click="logText">Log Text</button>',
-    methods: {
-      logText: function logText() {
-        eventBus.$emit("log-by-event-bus", 100);
+    template: '<p>message: {{message}}</p>',
+    props: {
+      message: {
+        type: String,
+        required: true,
       }
     }
   });
   new Vue({
     el: "#app",
-    created: function created() {
-      eventBus.$on("log-by-event-bus", function (value) {
-        console.log("received an event by event bus.\nReceived Value:", value);
-      });
-    }
+    data: function data() {
+      return {
+        message: '"Hello Vue!" From Parent component',
+        // TODO Practice #2 Add 'anotherMessage' in data
+        anotherMessage: '"Hello Vue!" From Parent component'.split('').reverse().join('')
+      }
+    },
   });
 };

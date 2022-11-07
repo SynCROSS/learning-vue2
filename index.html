@@ -8,7 +8,9 @@
   </head>
   <body>
     <div id="app">
-      <child-component></child-component>
+      <child-component :message="message"></child-component>
+      <!-- TODO Practice #3 Add sibling-component -->
+      <sibling-component :another-message="anotherMessage"></sibling-component>
     </div>
 
     <script
