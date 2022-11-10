@@ -102,6 +102,7 @@ window.onload = function onload() {
         ],
       ]);
       var router = new VueRouter({
+        mode: 'history', // * History Mode Removes Hash 
         routes: _toConsumableArray(routes.values()),
       });
       new Vue({
