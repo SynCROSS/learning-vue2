@@ -8,15 +8,29 @@
   </head>
   <body>
     <div id="app">
-      <child-component :message="message"></child-component>
-      <!-- TODO Practice #3 Add sibling-component -->
-      <sibling-component :another-message="anotherMessage"></sibling-component>
+      <h1>Vue Router Example</h1>
+      <nav>
+        <ul>
+          <li>
+            <router-link to="/main">Move To 'main'</router-link>
+          </li>
+          <li>
+            <router-link to="/login">Move To 'login'</router-link>
+          </li>
+        </ul>
+      </nav>
+      <!-- Component Will Replace <router-view /> When It Have To Render  -->
+      <router-view></router-view>
     </div>
 
-    <script
+    <!-- <script
       async
       src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"
     ></script>
+    <script
+      async
+      src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"
+    ></script> -->
     <script async src="src/app.js"></script>
   </body>
 </html>
